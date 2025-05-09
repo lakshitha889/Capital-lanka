@@ -1,0 +1,45 @@
+<button onclick="switchLanguage('en')">English</button>
+<button onclick="switchLanguage('si')">සිංහල</button>
+
+<div id="content">
+  <h2 data-en="Receive in 15 minutes into your bank account" 
+      data-si="මිනිත්තු 15 ඇතුළත ඔබගේ බැංකු ගිණුමට මුදල් ලැබේ" 
+      style="text-align: center; font-size: 22px;">
+    Receive in 15 minutes into your bank account
+  </h2>
+
+  <p data-en="Personalized loan offers up to 200 000 Rs" 
+     data-si="පුද්ගලික ණය දීමනා රු. 200,000 දක්වා">
+    Personalized loan offers up to 200 000 Rs
+  </p>
+
+  <div style="margin: 20px 0;">
+    <input type="range" min="5000" max="200000" value="5000" step="5000" id="loanRange" style="width: 100%;">
+    <p style="text-align: center; margin-top: 10px;">
+      Amount: <span id="loanAmount">5,000 Rs</span>
+    </p>
+  </div>
+
+  <button class="loan-button" data-en="Get a loan" data-si="ණය ලබාගන්න">Get a loan</button>
+
+  <div class="section">
+    <h3 data-en="4 Easy Steps to get a Cash Loan" data-si="මුදල් ණයක් ලබාගන්න පහසු පියවර 4ක්">4 Easy Steps to get a Cash Loan</h3>
+
+    <div class="step">
+      <div class="step-icon">&#128221;</div>
+      <strong data-en="Apply for Loan" data-si="ණය සඳහා අයදුම් කරන්න">Apply for Loan</strong><br>
+      <span data-en="Complete the application process in 3 minutes" data-si="අයදුම් කිරීමේ ක්‍රියාවලිය විනාඩි 3කින් නිමා කරන්න">Complete the application process in 3 minutes</span>
+    </div>
+
+    <!-- Add other steps here with data-en and data-si attributes -->
+  </div>
+</div>
+
+<script>
+  function switchLanguage(lang) {
+    const elements = document.querySelectorAll('[data-en]');
+    elements.forEach(el => {
+      el.textContent = el.getAttribute(data-${lang});
+    });
+  }
+</script>
